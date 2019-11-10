@@ -1,0 +1,14 @@
+{
+  "name": "webdriveriotut",
+  "version": "1.0.0",
+  "description": "webdriverIO tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sk",
+  "license": "ISC",
+  "devDependencies": {
+    "webdriverio": "^5.16.5"
+  }
+}
