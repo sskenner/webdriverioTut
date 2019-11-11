@@ -42,6 +42,30 @@ class Internet {
   get iframeBody() { return $('#tinymce') }
   get iframe() { return $('#mceu_27 #mce_0_ifr') }
 
+  get columnA() { return $('#column-a')}
+  get columnB() { return $('#column-b')}
+
+  get columnAHeader() { return $('#column-a header') }
+  get columnBHeader() { return $('#column-b header') }
+
+  get draggable() { return $('#draggable') }
+  get droppable() { return $('#droppable') }
+  get droppableParagraph() { return $('#droppable p') }
+  /**
+   * Drag and drop
+   */
+  dragDraggableToDroppable() {
+    this.draggable.waitForDisplayed()
+    this.draggable.dragAndDrop(this.droppable)
+  }
+
+  /**
+   * Drag box A to box B
+   */
+  dragColumnAToColumnB() {
+    this.columnA.waitForDisplayed()
+    this.columnA.dragAndDrop(this.columnB)
+  }
   /**
    * Enter text in the iframe
    * @param {String} text the text to be entered
