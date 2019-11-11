@@ -23,4 +23,7 @@ describe("Interacting with elements", function(){
   it('Is subheader enabled?', () => {
     console.log(internetPage.subHeading.isEnabled())
   });
+  it('Click Element', () => {
+    internetPage.clickOnLink()
+  });
 })
