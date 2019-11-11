@@ -38,6 +38,14 @@ class Internet {
   get result() { return $('.example #result') }
 
   /**
+   * Scrolls to the page footer w scrollIntoView; DOESNT WORK w/o it as per tuturial
+   */
+  scrollToPageFooter() {
+    this.pageFooter.scrollIntoView()
+    this.pageFooter.moveTo()
+  }
+
+  /**
    * Clicks the target input field
    */
   clickTarget() {
