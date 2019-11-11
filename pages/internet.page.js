@@ -37,6 +37,30 @@ class Internet {
   get target() { return $('.example #target') }
   get result() { return $('.example #result') }
 
+  get hereLink() { return $('.example a') }
+
+  get iframeBody() { return $('#tinymce') }
+  get iframe() { return $('#mceu_27 #mce_0_ifr') }
+
+  /**
+   * Enter text in the iframe
+   * @param {String} text the text to be entered
+   */
+  sendTextToBody(text) {
+    this.iframeBody.waitForDisplayed()
+    this.iframeBody.clearValue()
+    this.iframeBody.click()
+    this.iframeBody.keys(text)
+  }
+
+  /**
+   * Click the "click here" link
+   */
+  clickHereLink() {
+    this.hereLink.waitForDisplayed()
+    this.hereLink.click()
+  }
+
   /**
    * Scrolls to the page footer w scrollIntoView; DOESNT WORK w/o it as per tuturial
    */
