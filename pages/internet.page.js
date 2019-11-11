@@ -31,6 +31,55 @@ class Internet {
   get username() { return $('#username') }
   get password() { return $('#password') }
 
+  figures(index) { return $(`.example .figure:nth-child(${index}) img`)}
+  figureDetails(index) { return $(`.example .figure:nth-child(${index}) .figcaption h5`) }
+
+  get target() { return $('.example #target') }
+  get result() { return $('.example #result') }
+
+  /**
+   * Clicks the target input field
+   */
+  clickTarget() {
+    this.target.waitForDisplayed()
+    this.target.click()
+  }
+
+  /**
+   * 
+   * @param {String} text the keyboard text to enter
+   */
+  sendKeysToTarget(text) {
+    this.target.waitForDisplayed()
+    this.target.keys(text)
+  }
+
+  /**
+   * Return the text of the return element
+   */
+  getResultText() {
+    this.result.waitForDisplayed()
+    return this.result.getText()
+  }
+
+  /**
+   * Hovers over the specified image
+   * @param {Number} index the specified index of the image
+   */
+  hoverOnFigure(index) {
+    this.figures(index).waitForDisplayed()
+    this.figures(index).moveTo(1,1)
+  }
+
+  /**
+   * Returns the text of the figure details
+   * @param {Number} index the index of the element
+   */
+  getFigureDetailsText(index) {
+    this.figureDetails(index).waitForDisplayed()
+    return this.figureDetails(index).getText()
+  }
+
   /**
    * Enter the username into the field
    * @param {String} text username to be entered
