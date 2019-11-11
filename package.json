@@ -4,7 +4,7 @@
   "description": "webdriverIO tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js"
   },
   "author": "sk",
   "license": "ISC",
@@ -15,15 +15,23 @@
     "@wdio/selenium-standalone-service": "^5.16.5",
     "@wdio/spec-reporter": "^5.16.5",
     "@wdio/sync": "^5.16.5",
-    "chai": "^4.2.0",
+    "chai": "^4.0.2",
     "chai-webdriverio": "^1.0.0",
     "chromedriver": "^78.0.1",
     "local-runner": "^0.1.1-alpha",
+    "selenium-standalone": "^6.16.0",
     "wdio-chromedriver-service": "^5.0.2",
     "webdriverio": "^5.16.5"
   },
   "dependencies": {
+    "@hapi/cryptiles": "^4.2.1",
     "@wdio/cli": "^5.16.5",
+    "audit": "0.0.6",
+    "fix": "0.0.6",
     "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sskenner/webdriverioTut.git"
   }
 }
