@@ -1,4 +1,4 @@
-internetPage = require('../pages/internet.page')
+internetPage = require('../../pages/internet.page')
 
 describe('Test element actions', () => {
     it('should click element', () => {
