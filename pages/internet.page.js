@@ -24,156 +24,210 @@ class Internet {
   get firstLink() {
     return $("ul li:nth-child(1) a");
   }
-  link(index) { return $(`ul li:nth-child(${index}) a`)}
+  link(index) {
+    return $(`ul li:nth-child(${index}) a`);
+  }
 
-  checkboxes(index) { return $(`#checkboxes input:nth-child(${index})`) }
+  checkboxes(index) {
+    return $(`#checkboxes input:nth-child(${index})`);
+  }
 
-  get username() { return $('#username') }
-  get password() { return $('#password') }
+  get username() {
+    return $("#username");
+  }
+  get password() {
+    return $("#password");
+  }
 
-  figures(index) { return $(`.example .figure:nth-child(${index}) img`)}
-  figureDetails(index) { return $(`.example .figure:nth-child(${index}) .figcaption h5`) }
+  figures(index) {
+    return $(`.example .figure:nth-child(${index}) img`);
+  }
+  figureDetails(index) {
+    return $(`.example .figure:nth-child(${index}) .figcaption h5`);
+  }
 
-  get target() { return $('.example #target') }
-  get result() { return $('.example #result') }
+  get target() {
+    return $(".example #target");
+  }
+  get result() {
+    return $(".example #result");
+  }
 
-  get hereLink() { return $('.example a') }
+  get hereLink() {
+    return $(".example a");
+  }
 
-  get iframeBody() { return $('#tinymce') }
-  get iframe() { return $('#mceu_27 #mce_0_ifr') }
+  get iframeBody() {
+    return $("#tinymce");
+  }
+  get iframe() {
+    return $("#mceu_27 #mce_0_ifr");
+  }
 
-  get columnA() { return $('#column-a')}
-  get columnB() { return $('#column-b')}
+  get columnA() {
+    return $("#column-a");
+  }
+  get columnB() {
+    return $("#column-b");
+  }
 
-  get columnAHeader() { return $('#column-a header') }
-  get columnBHeader() { return $('#column-b header') }
+  get columnAHeader() {
+    return $("#column-a header");
+  }
+  get columnBHeader() {
+    return $("#column-b header");
+  }
 
-  get draggable() { return $('#draggable') }
-  get droppable() { return $('#droppable') }
-  get droppableParagraph() { return $('#droppable p') }
+  get draggable() {
+    return $("#draggable");
+  }
+  get droppable() {
+    return $("#droppable");
+  }
+  get droppableParagraph() {
+    return $("#droppable p");
+  }
 
-  get dropdownMenu() { return $('#dropdown') }
-  get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)') }
-  get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)') }
+  get dropdownMenu() {
+    return $("#dropdown");
+  }
+  get dropdownMenuOption1() {
+    return $("#dropdown option:nth-child(2)");
+  }
+  get dropdownMenuOption2() {
+    return $("#dropdown option:nth-child(3)");
+  }
 
-  javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
+  javascriptAlertButton(index) {
+    return $(`.example li:nth-child(${index}) button`);
+  }
 
-  get enableButton() { return $('#input-example button') }
-  get inputEnabledField() { return $('#input-example input') }
+  get enableButton() {
+    return $("#input-example button");
+  }
+  get inputEnabledField() {
+    return $("#input-example input");
+  }
 
-  get exampleButton() { return $('.example button') }
-  deleteButton(index) { return $(`#elements button:nth-child(${index})`)}
+  get exampleButton() {
+    return $(".example button");
+  }
+  deleteButton(index) {
+    return $(`#elements button:nth-child(${index})`);
+  }
 
-  get pageButton() { return $('#checkbox-example button') }
+  get pageButton() {
+    return $("#checkbox-example button");
+  }
 
   clickPageButton() {
-    this.pageButton.waitForDisplayed()
-    this.pageButton.click()
+    this.pageButton.waitForDisplayed();
+    this.pageButton.click();
   }
 
   clickExampleButton() {
-    this.exampleButton.waitForDisplayed()
-    this.exampleButton.click()
+    this.exampleButton.waitForDisplayed();
+    this.exampleButton.click();
   }
 
   clickDeleteButton(index) {
-    this.deleteButton(index).waitForDisplayed()
-    this.deleteButton(index).click()
+    this.deleteButton(index).waitForDisplayed();
+    this.deleteButton(index).click();
   }
 
   /**
    * Click the Enable/Disable Button
    */
   clickEnableButton() {
-    this.enableButton.waitForDisplayed()
-    this.enableButton.click()
+    this.enableButton.waitForDisplayed();
+    this.enableButton.click();
   }
 
   clickJavascriptAlertButton(index) {
-    this.javascriptAlertButton(index).waitForDisplayed()
-    this.javascriptAlertButton(index).click()
+    this.javascriptAlertButton(index).waitForDisplayed();
+    this.javascriptAlertButton(index).click();
   }
 
   clickDropdownMenu() {
-    this.dropdownMenu.waitForDisplayed()
-    this.dropdownMenu.click()
+    this.dropdownMenu.waitForDisplayed();
+    this.dropdownMenu.click();
   }
 
   clickDropdownMenuOption1() {
-    this.dropdownMenuOption1.waitForDisplayed()
-    this.dropdownMenuOption1.click()
+    this.dropdownMenuOption1.waitForDisplayed();
+    this.dropdownMenuOption1.click();
   }
-  
+
   clickDropdownMenuOption2() {
-    this.dropdownMenuOption2.waitForDisplayed()
-    this.dropdownMenuOption2.click()
+    this.dropdownMenuOption2.waitForDisplayed();
+    this.dropdownMenuOption2.click();
   }
 
   /**
    * Drag and drop
    */
   dragDraggableToDroppable() {
-    this.draggable.waitForDisplayed()
-    this.draggable.dragAndDrop(this.droppable)
+    this.draggable.waitForDisplayed();
+    this.draggable.dragAndDrop(this.droppable);
   }
 
   /**
    * Drag box A to box B
    */
   dragColumnAToColumnB() {
-    this.columnA.waitForDisplayed()
-    this.columnA.dragAndDrop(this.columnB)
+    this.columnA.waitForDisplayed();
+    this.columnA.dragAndDrop(this.columnB);
   }
   /**
    * Enter text in the iframe
    * @param {String} text the text to be entered
    */
   sendTextToBody(text) {
-    this.iframeBody.waitForDisplayed()
-    this.iframeBody.clearValue()
-    this.iframeBody.click()
-    this.iframeBody.keys(text)
+    this.iframeBody.waitForDisplayed();
+    this.iframeBody.clearValue();
+    this.iframeBody.click();
+    this.iframeBody.keys(text);
   }
 
   /**
    * Click the "click here" link
    */
   clickHereLink() {
-    this.hereLink.waitForDisplayed()
-    this.hereLink.click()
+    this.hereLink.waitForDisplayed();
+    this.hereLink.click();
   }
 
   /**
    * Scrolls to the page footer w scrollIntoView; DOESNT WORK w/o it as per tuturial
    */
   scrollToPageFooter() {
-    this.pageFooter.scrollIntoView()
-    this.pageFooter.moveTo()
+    this.pageFooter.scrollIntoView();
+    this.pageFooter.moveTo();
   }
 
   /**
    * Clicks the target input field
    */
   clickTarget() {
-    this.target.waitForDisplayed()
-    this.target.click()
+    this.target.waitForDisplayed();
+    this.target.click();
   }
 
   /**
-   * 
+   *
    * @param {String} text the keyboard text to enter
    */
   sendKeysToTarget(text) {
-    this.target.waitForDisplayed()
-    this.target.keys(text)
+    this.target.waitForDisplayed();
+    this.target.keys(text);
   }
 
   /**
    * Return the text of the return element
    */
   getResultText() {
-    this.result.waitForDisplayed()
-    return this.result.getText()
+    this.result.waitForDisplayed();
+    return this.result.getText();
   }
 
   /**
@@ -181,8 +235,8 @@ class Internet {
    * @param {Number} index the specified index of the image
    */
   hoverOnFigure(index) {
-    this.figures(index).waitForDisplayed()
-    this.figures(index).moveTo(1,1)
+    this.figures(index).waitForDisplayed();
+    this.figures(index).moveTo(1, 1);
   }
 
   /**
@@ -190,8 +244,8 @@ class Internet {
    * @param {Number} index the index of the element
    */
   getFigureDetailsText(index) {
-    this.figureDetails(index).waitForDisplayed()
-    return this.figureDetails(index).getText()
+    this.figureDetails(index).waitForDisplayed();
+    return this.figureDetails(index).getText();
   }
 
   /**
@@ -199,8 +253,8 @@ class Internet {
    * @param {String} text username to be entered
    */
   enterUsername(text) {
-    this.username.waitForDisplayed()
-    this.username.setValue(text)
+    this.username.waitForDisplayed();
+    this.username.setValue(text);
   }
 
   /**
@@ -208,8 +262,8 @@ class Internet {
    * @param {String} text password to be entered
    */
   enterPassword(text) {
-    this.password.waitForDisplayed()
-    this.password.setValue(text)
+    this.password.waitForDisplayed();
+    this.password.setValue(text);
   }
 
   /**
@@ -217,13 +271,13 @@ class Internet {
    * @param {Number} index the index of the element
    */
   clickLink(index) {
-    this.link(index).waitForDisplayed()
-    this.link(index).click()
+    this.link(index).waitForDisplayed();
+    this.link(index).click();
   }
 
   clickCheckbox(index) {
-    this.checkboxes(index).waitForDisplayed()
-    this.checkboxes(index).click()
+    this.checkboxes(index).waitForDisplayed();
+    this.checkboxes(index).click();
   }
 
   getLiText() {
@@ -233,15 +287,15 @@ class Internet {
   }
 
   getSpecificElementText(index) {
-    this.specificChildElement(index).waitForDisplayed()
+    this.specificChildElement(index).waitForDisplayed();
     return this.specificChildElement(index).getText();
   }
 
   clickOnLink() {
-    if(this.firstLink.isDisplayed() === true) {
-      this.firstLink.click()
+    if (this.firstLink.isDisplayed() === true) {
+      this.firstLink.click();
     }
-    this.h3Header.waitForDisplayed()
+    this.h3Header.waitForDisplayed();
   }
 }
 module.exports = new Internet();
