@@ -56,8 +56,23 @@ class Internet {
   get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)') }
   get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)') }
 
+  javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
+
   get enableButton() { return $('#input-example button') }
   get inputEnabledField() { return $('#input-example input') }
+
+  get exampleButton() { return $('.example button') }
+  deleteButton(index) { return $(`#elements button:nth-child(${index})`)}
+
+  clickExampleButton() {
+    this.exampleButton.waitForDisplayed()
+    this.exampleButton.click()
+  }
+
+  clickDeleteButton(index) {
+    this.deleteButton(index).waitForDisplayed()
+    this.deleteButton(index).click()
+  }
 
   /**
    * Click the Enable/Disable Button
@@ -66,8 +81,6 @@ class Internet {
     this.enableButton.waitForDisplayed()
     this.enableButton.click()
   }
-
-  javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
 
   clickJavascriptAlertButton(index) {
     this.javascriptAlertButton(index).waitForDisplayed()
