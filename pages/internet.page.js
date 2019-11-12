@@ -56,6 +56,17 @@ class Internet {
   get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)') }
   get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)') }
 
+  get enableButton() { return $('#input-example button') }
+  get inputEnabledField() { return $('#input-example input') }
+
+  /**
+   * Click the Enable/Disable Button
+   */
+  clickEnableButton() {
+    this.enableButton.waitForDisplayed()
+    this.enableButton.click()
+  }
+
   javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
 
   clickJavascriptAlertButton(index) {
