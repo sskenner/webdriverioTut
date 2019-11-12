@@ -64,6 +64,13 @@ class Internet {
   get exampleButton() { return $('.example button') }
   deleteButton(index) { return $(`#elements button:nth-child(${index})`)}
 
+  get pageButton() { return $('#checkbox-example button') }
+
+  clickPageButton() {
+    this.pageButton.waitForDisplayed()
+    this.pageButton.click()
+  }
+
   clickExampleButton() {
     this.exampleButton.waitForDisplayed()
     this.exampleButton.click()
