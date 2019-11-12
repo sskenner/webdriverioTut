@@ -56,6 +56,13 @@ class Internet {
   get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)') }
   get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)') }
 
+  javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
+
+  clickJavascriptAlertButton(index) {
+    this.javascriptAlertButton(index).waitForDisplayed()
+    this.javascriptAlertButton(index).click()
+  }
+
   clickDropdownMenu() {
     this.dropdownMenu.waitForDisplayed()
     this.dropdownMenu.click()
