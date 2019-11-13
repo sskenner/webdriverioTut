@@ -1,5 +1,7 @@
 module.exports = {
   qa: "http://the-internet.herokuapp.com",
   dev: "https://www.google.com/",
-  staging: "https://www.yahoo.com/"
+  staging: "https://www.yahoo.com/",
+  apphack1: "",
+  apphack2: ""
 };
