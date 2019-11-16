@@ -38,37 +38,18 @@ describe("Test element actions", () => {
   });
   it.only("should sort due column in ascending order", () => {
     browser.url(`${browser.options.baseUrl}/tables`);
+    // TODO: rmv for test verification ONLY
     let unSorted = internetPage.getColumnText();
     console.log(unSorted);
-    let sorted = unSorted.sort(function(a, b){return a - b});
+    //
+    let sorted = internetPage.getColumnTextSorted();
     console.log(sorted);
     let sortedClick = internetPage.getColumnTextClick();
+    // TODO: rmv for test verification ONLY
     console.log(sortedClick);
-    function areArraysEqualSets(a1, a2) {
-      let superSet = {};
-      for (let i = 0; i < a1.length; i++) {
-        const e = a1[i] + typeof a1[i];
-        superSet[e] = 1;
-      }
-    
-      for (let i = 0; i < a2.length; i++) {
-        const e = a2[i] + typeof a2[i];
-        if (!superSet[e]) {
-          return false;
-        }
-        superSet[e] = 2;
-      }
-    
-      for (let e in superSet) {
-        if (superSet[e] === 1) {
-          return false;
-        }
-      }
-    
-      return true;
-    }
-    console.log(areArraysEqualSets(sorted, unSorted));
-    expect(areArraysEqualSets(sortedClick, sorted)).equals(true, 'expected column due data to be sorted in ascending order');
+    console.log(internetPage.areArraysEqualSets(sortedClick, sorted));
+    //
+    expect(internetPage.areArraysEqualSets(sortedClick, sorted)).equals(true, 'expected column due data to be sorted in ascending order');
   });
   it('should keep data in tact after sorting', () => {
     browser.url(`${browser.options.baseUrl}/tables`);
@@ -76,31 +57,10 @@ describe("Test element actions", () => {
     let unSorted = internetPage.getRowText();
     console.log(unSorted);
     let sorted = internetPage.getRowTextSorted();
+    // TODO: rmv for test verification ONLY
     console.log(sorted);
-    function areArraysEqualSets(a1, a2) {
-      let superSet = {};
-      for (let i = 0; i < a1.length; i++) {
-        const e = a1[i] + typeof a1[i];
-        superSet[e] = 1;
-      }
-    
-      for (let i = 0; i < a2.length; i++) {
-        const e = a2[i] + typeof a2[i];
-        if (!superSet[e]) {
-          return false;
-        }
-        superSet[e] = 2;
-      }
-    
-      for (let e in superSet) {
-        if (superSet[e] === 1) {
-          return false;
-        }
-      }
-    
-      return true;
-    }
-    console.log(areArraysEqualSets(unSorted, sorted));
-    expect(areArraysEqualSets(unSorted, sorted)).equals(true, 'expected data to be in tact after sort');
+    console.log(internetPage.areArraysEqualSets(unSorted, sorted));
+    //
+    expect(internetPage.areArraysEqualSets(unSorted, sorted)).equals(true, 'expected data to be in tact after sort');
   });
 });

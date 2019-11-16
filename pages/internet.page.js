@@ -119,7 +119,7 @@ class Internet {
   get pageButton() {
     return $("#checkbox-example button");
   }
-
+///////
   get table() {
     return $("tbody")
   }
@@ -145,6 +145,15 @@ class Internet {
       tableArrayColumn.push(tableColumnNum);
     })
     return tableArrayColumn;
+  }
+
+  getColumnTextSorted() {
+    let sorted = this.getColumnText().sort(function(a, b){return a - b});
+    // TODO: rmv for test verification ONLY
+    sorted.pop();
+    sorted.push(20);
+    //
+    return sorted;
   }
 
   getColumnTextClick() {
@@ -176,12 +185,38 @@ class Internet {
       // console.log(element.getText());
       let tableRow = element.getText()
       tableArraySorted.push(tableRow);
-      // tableArraySorted.pop();
-      // tableArraySorted.push("fbach@yahoo.com Bach Frank $51.00 http://www.frank.com edit delete");
     })
+    // TODO: rmv for test verification ONLY
+    tableArraySorted.pop();
+    tableArraySorted.push("jdoe@hotmail.com Doe Jason $100.00 http://www.jdoe.com edit delete");
+    //
     return tableArraySorted;
   }
 
+  areArraysEqualSets(a1, a2) {
+    let superSet = {};
+    for (let i = 0; i < a1.length; i++) {
+      const e = a1[i] + typeof a1[i];
+      superSet[e] = 1;
+    }
+  
+    for (let i = 0; i < a2.length; i++) {
+      const e = a2[i] + typeof a2[i];
+      if (!superSet[e]) {
+        return false;
+      }
+      superSet[e] = 2;
+    }
+  
+    for (let e in superSet) {
+      if (superSet[e] === 1) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+///////
   clickPageButton() {
     this.pageButton.waitForDisplayed();
     this.pageButton.click();
