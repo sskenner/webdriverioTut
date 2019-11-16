@@ -120,6 +120,68 @@ class Internet {
     return $("#checkbox-example button");
   }
 
+  get table() {
+    return $("tbody")
+  }
+
+  get tableRows() {
+    return this.table.$$("tr");
+  }
+
+  get tableColumns() {
+    return this.table.$$("td:nth-child(4)");
+  }
+  
+  get headerDueSort() {
+    return $("#table1 .header:nth-child(4) span")
+  }
+
+  getColumnText() {
+    let tableArrayColumn = [];
+    this.tableColumns.forEach((element) => {
+      // console.log(element.getText());
+      let tableColumnCurr = element.getText()
+      let tableColumnNum = Number(tableColumnCurr.replace(/[^0-9-\.]+/g, ""));
+      tableArrayColumn.push(tableColumnNum);
+    })
+    return tableArrayColumn;
+  }
+
+  getColumnTextClick() {
+    let tableArrayColumnClick = [];
+    this.headerDueSort.click();
+    this.tableColumns.forEach((element) => {
+      // console.log(element.getText());
+      let tableColumnCurrClick = element.getText()
+      let tableColumnNumClick = Number(tableColumnCurrClick.replace(/[^0-9-\.]+/g, ""));
+      tableArrayColumnClick.push(tableColumnNumClick);
+    })
+    return tableArrayColumnClick;
+  }
+
+  getRowText() {
+    let tableArrayRow = [];
+    this.tableRows.forEach((element) => {
+      // console.log(element.getText());
+      let tableRow = element.getText()
+      tableArrayRow.push(tableRow);
+    })
+    return tableArrayRow;
+  }
+
+  getRowTextSorted() {
+    let tableArraySorted = [];
+    this.headerDueSort.click();
+    this.tableRows.forEach((element) => {
+      // console.log(element.getText());
+      let tableRow = element.getText()
+      tableArraySorted.push(tableRow);
+      // tableArraySorted.pop();
+      // tableArraySorted.push("fbach@yahoo.com Bach Frank $51.00 http://www.frank.com edit delete");
+    })
+    return tableArraySorted;
+  }
+
   clickPageButton() {
     this.pageButton.waitForDisplayed();
     this.pageButton.click();
